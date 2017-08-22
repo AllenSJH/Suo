@@ -43,4 +43,12 @@ public class MainController {
         return "bbb";
     }
 
+    public void test02(){
+        System.out.println("hahaha");
+    }
+
+
+
+
+
 }
