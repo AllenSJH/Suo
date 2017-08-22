@@ -37,4 +37,10 @@ public class MainController {
         return service.queryPage(1,2);
     }
 
+    @RequestMapping(value = "/test")
+    @ResponseBody
+    public String gittest(){
+        return "bbb";
+    }
+
 }
