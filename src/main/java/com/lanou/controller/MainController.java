@@ -51,4 +51,12 @@ public class MainController {
 
 
 
+    //编辑代码
+
+    @RequestMapping(value = "/branch")
+    public String branchTest(){
+        return "branch";
+    }
+
+
 }
