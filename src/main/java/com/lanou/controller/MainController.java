@@ -43,4 +43,24 @@ public class MainController {
         return "bbb";
     }
 
+    public void test02(){
+        System.out.println("hahaha");
+    }
+
+
+
+
+
+    //编辑代码
+
+    @RequestMapping(value = "/branch")
+    public String branchTest(){
+        return "branch";
+    }
+
+    //wwwwwwww
+    //ddddddd
+
+
+
 }
