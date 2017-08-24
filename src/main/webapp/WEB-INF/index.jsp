@@ -60,6 +60,7 @@
 
 
     </div>
+
 </nav>
 </body>
 <script type="text/javascript">
@@ -67,7 +68,7 @@
     function addNewTR(id,title,des,how) {
 
         var tdleft = $("<td></td>")
-        $("<a href='###'>"+title+"</a>").appendTo(tdleft)
+        $("<a href='#'>"+title+"</a>").appendTo(tdleft).click(getAllContent).attr("id",id)
         var tdz=$("<td></td>").html("<p>"+des+"</p>")
         var tdright = $("<td></td>")
 
@@ -113,15 +114,15 @@
         })
     }
 
-    function getAllContent() {
+    var getAllContent= function (){
+        var id = $(this).attr("id")
         $.ajax({
             url:"content",
+            data:{
+              id:id
+            },
             success:function (result) {
-                console.log(result)
-                for(var i=0;i<result.length;i++){
-                    var blog = result[i];
-                    addNewTR(blog.id,blog.title,blog.des,0)
-                }
+                window.location.href="/cc?title="+result.title+"&content="+result.content
             }
         })
 

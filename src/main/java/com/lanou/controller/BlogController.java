@@ -36,6 +36,11 @@ public class BlogController {
         return "index";
     }
 
+    @RequestMapping(value = "/cc")
+    public String content(){
+        return "viewblog";
+    }
+
 
     @RequestMapping(value = "/add")
     public String addBlog(Blog blog){
