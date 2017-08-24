@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lanou.mapper.UserMapper">
+
+    <resultMap id="UserBase" type="User">
+        <id column="" property="id"/>
+        <result column="name"  property="name"/>
+        <result column="password" property="password"/>
+        <result column="level" property="level"/>
+        <result column="des" property="des"/>
+        <result column="tel" property="tel"/>
+        <result column="address" property="address"/>
+        <collection property="blogList" column="id" select="com.lanou.mapper.BlogMapper.addBlog"/>
+    </resultMap>
+
+    <!--查找所有message-->
+    <select id="findAllMessage" resultType="com.lanou.bean.Blog">
+        SELECT * FROM b_blog
+    </select>
+
+    <select id="loginBlog" parameterType="String" resultType="com.lanou.bean.User">
+        SELECT * FROM  b_user WHERE name= #{name} and password = #{password};
+    </select>
+
+
+    <insert id="regiest" useGeneratedKeys="true" keyProperty="id" parameterType="User">
+        INSERT INTO b_user VALUES (null ,#{name} , #{password}, 0 , #{level} , #{tel}, #{address});
+    </insert>
+
+
+</mapper>
