@@ -2,7 +2,6 @@ package com.lanou.service;
 
 import com.github.pagehelper.PageInfo;
 import com.lanou.bean.Blog;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -20,4 +19,6 @@ public interface BlogService {
 
     Integer deleteBlog(int bid);
 
+
+    Blog findContentById(int id);
 }

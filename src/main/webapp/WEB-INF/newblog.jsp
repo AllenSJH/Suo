@@ -19,7 +19,7 @@
     &nbsp;描述:<input id="des" name="des" style="width:600px; height:30px"></br>
     &nbsp;内容:<textarea id="content" name="content" style="width:600px; height:200px"></textarea></br>
       <input type="submit" value="提交">
-      <a href="">返回</a>
+      <a href="${pageContext.request.contextPath}/return">返回</a>
 
 </form>
 

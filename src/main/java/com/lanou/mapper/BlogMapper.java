@@ -18,4 +18,7 @@ public interface BlogMapper {
 
 
     Integer deleteBlog(int bid);
+
+
+    Blog findContentById(int id);
 }

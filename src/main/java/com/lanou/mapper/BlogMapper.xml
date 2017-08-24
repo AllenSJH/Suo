@@ -21,5 +21,8 @@
         SELECT * FROM b_blog
 
     </select>
+    <select id="findContentById" resultMap="BlogBase">
+        SELECT title,content FROM b_blog WHERE id=#{id}
+    </select>
 
 </mapper>

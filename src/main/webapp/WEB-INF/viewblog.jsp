@@ -11,8 +11,9 @@
     <title>查看博客</title>
 </head>
 <body>
-
-
+<h1>标题</h1>
+<hr>
+<span>内容</span>
 
 </body>
 </html>

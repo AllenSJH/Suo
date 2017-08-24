@@ -3,14 +3,13 @@ package com.lanou.controller;
 import com.github.pagehelper.PageInfo;
 import com.lanou.bean.Blog;
 import com.lanou.service.BlogService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -30,6 +29,11 @@ public class BlogController {
     @RequestMapping(value = "/newblog")
     public String newBlog(){
         return "newblog";
+    }
+
+    @RequestMapping(value = "/return")
+    public String return1(){
+        return "index";
     }
 
 
@@ -60,6 +64,16 @@ public class BlogController {
       Integer blogid = blogService.deleteBlog(bid);
        return blogid;
     }
+
+    @RequestMapping(value = "/content")
+    @ResponseBody
+    public Blog findContent(@Param("id") int id){
+      Blog blog =  blogService.findContentById(id);
+        System.out.println(blog);
+       return blog;
+    }
+
+
 
 
 

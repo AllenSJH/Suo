@@ -113,6 +113,20 @@
         })
     }
 
+    function getAllContent() {
+        $.ajax({
+            url:"content",
+            success:function (result) {
+                console.log(result)
+                for(var i=0;i<result.length;i++){
+                    var blog = result[i];
+                    addNewTR(blog.id,blog.title,blog.des,0)
+                }
+            }
+        })
+
+    }
+    getAllContent()
 
 </script>
 

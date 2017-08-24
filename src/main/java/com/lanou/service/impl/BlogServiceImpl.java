@@ -3,10 +3,8 @@ package com.lanou.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.lanou.bean.Blog;
-import com.lanou.bean.User;
 import com.lanou.mapper.BlogMapper;
 import com.lanou.service.BlogService;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -43,6 +41,10 @@ public class BlogServiceImpl implements BlogService {
 
     public Integer deleteBlog(int bid) {
         return blogMapper.deleteBlog(bid);
+    }
+
+    public Blog findContentById(int id) {
+        return blogMapper.findContentById(id);
     }
 
 
